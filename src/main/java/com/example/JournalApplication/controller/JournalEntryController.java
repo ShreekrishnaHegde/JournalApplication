@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/journal")
@@ -21,7 +19,6 @@ public class JournalEntryController {
 
     @GetMapping
     public List<JournalEntry> getAll(){
-        System.out.printf("Hello");
         return journalEntryService.getAll();
     }
     @PostMapping
