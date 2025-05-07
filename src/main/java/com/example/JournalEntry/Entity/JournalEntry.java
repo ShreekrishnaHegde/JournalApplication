@@ -1,18 +1,36 @@
 package com.example.JournalEntry.Entity;
 
-public class JournalEntry {
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-    private long id;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+@Document(collection = "journal_entries")
+public class JournalEntry {
+    @Id
+    private ObjectId id;
 
     private String title;
 
     private String content;
 
-    public long getId() {
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
+
+    private LocalDateTime date;
+
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
